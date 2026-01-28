@@ -7,7 +7,8 @@
         x:Class="TemperatureConverterApp.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="TemperatureConverterApp" Width="400" Height="450">
+        Title="TemperatureConverterApp" Width="400" Height="450"
+        >
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
@@ -26,19 +27,15 @@
                        Text="Temperature Converter">
             </TextBlock>
         </Border>
-        <Grid ShowGridLines="True"
+        <Grid ShowGridLines="False"
               Margin="5"
-              ColumnDefinitions="120, 100"
+              ColumnDefinitions="150, 100"
               RowDefinitions="Auto, Auto"
         >
 		    <TextBlock Grid.Row="0" Grid.Column="0" Margin="10">Celsius</TextBlock>
-            <TextBox Grid.Row="0" Grid.Column="1" Margin="0 5" Text="0"></TextBox>
+            <TextBox Grid.Row="0" Grid.Column="1" Margin="0 5" Text="0" Name="Celsius" TextChanged="CelsiusTextChanged"></TextBox>
 		    <TextBlock Grid.Row="1" Grid.Column="0" Margin="10">Fahrenheit</TextBlock>
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="0 5" Text="0"></TextBox>
+            <TextBox IsReadOnly="True" Grid.Row="1" Grid.Column="1" Margin="0 5" Text="0" Name="Fahrenheit"></TextBox>
         </Grid>
-        <Button HorizontalAlignment="Center">Calculate</Button>
-
     </StackPanel>
-    
-
 </Window>
